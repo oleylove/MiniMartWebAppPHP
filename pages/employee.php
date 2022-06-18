@@ -2,24 +2,43 @@
 $employeeActive = ' active';
 $pageName = 'Emoloyee';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Head -->
-<?php require_once('../layouts/head.php'); ?>
-<!-- End Head -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="../images/apple-icon.png">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <title>
+        Soft UI Dashboard
+    </title>
+
+    <!-- CSS Files -->
+    <?php 
+        require_once('../layouts/header-css.php');
+        require_once('../layouts/datatable-css.php'); 
+    ?>
+        
+</head>
 
 <body class="g-sidenav-show  bg-gray-100">
 
     <!-- Sidenav -->
-    <?php require_once('../layouts/sidenav.php'); ?>
-    <!--End Sidenav -->
+    <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
+      <?php require_once('../layouts/sidenav.php'); ?>
+    </aside>
+    <!-- End Sidenav -->
 
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
 
-        <!-- Navbar Main -->
-        <?php require_once('../layouts/navbar-main.php'); ?>
-        <!-- End Navbar Main -->
+        <!-- Navbar -->
+        <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
+            navbar-scroll="true">
+            <?php require_once('../layouts/navbar.php'); ?>
+        </nav>
+        <!-- End Navbar -->
 
         <div class="container-fluid py-4">
 
@@ -64,44 +83,25 @@ $pageName = 'Emoloyee';
             </div>
 
             <!-- Footer -->
-            <?php require_once('../layouts/footer.php'); ?>
+            <footer class="footer pt-3  ">
+                <?php require_once('../layouts/footer.php'); ?>
+            </footer>
             <!-- End Footer -->
 
         </div>
     </main>
 
-    <!-- fixed-plugin -->
-    <?php require_once('../layouts/fixed-plugin.php'); ?>
-    <!-- End Fixed-plugin -->
-
+     <!-- Fixed Plugin -->
+     <div class="fixed-plugin">
+      <?php require_once('../layouts/fixed-plugin.php'); ?>
+    </div>
+    <!-- End Fixed Plugin -->
 
     <!--   Core JS Files   -->
-    <script src="../assets/js/core/popper.min.js"></script>
-    <script src="../assets/js/core/bootstrap.min.js"></script>
-    <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-    <script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-        var options = {
-            damping: '0.5'
-        }
-        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-    </script>
-    <!-- Github buttons -->
-    <!-- <script async defer src="https://buttons.github.io/buttons.js"></script> -->
-    <script async defer src="../assets/js/plugins/buttons.js"></script>
-    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.6"></script>
-
-    <!-- JS Files DataTables Bootstrap 5 -->
-    <script type="text/javascript" src="../assets/js/core/jquery-3.6.0.js"></script>
-    <script type="text/javascript" src="../assets/datatable/js/bootstrap.bundle.js"></script>
-    <script type="text/javascript" src="../assets/datatable/js/jquery.dataTables.js"></script>
-    <script type="text/javascript" src="../assets/datatable/js/dataTables.bootstrap5.js"></script>
-    <script type="text/javascript" src="../assets/datatable/js/dataTables.responsive.js"></script>
-    <script type="text/javascript" src="../assets/datatable/js/responsive.bootstrap5.js"></script>
+    <?php 
+        require_once('../layouts/main-js.php');
+        require_once('../layouts/datatable-js.php');
+    ?>
     
     <!-- JS Files DataTables Ajax -->
     <script src="../ajax/Employee.js"></script>
