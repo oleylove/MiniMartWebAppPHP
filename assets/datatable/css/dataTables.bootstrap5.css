@@ -428,25 +428,7 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^=col-]:last-
 }
 
 
-
-
-/* #ShowDataUsers {
-  table-layout: fixed;
-  width: 100% !important;
-}
-#ShowDataUsers td{
-  width: auto !important;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-#ShowDataUsers th{
-  width: auto !important;
-  white-space: normal;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-} */
-
+/* Add new */
 table.table-overflow {
   table-layout: fixed;
   width: 100% !important;
@@ -455,6 +437,7 @@ table.table-overflow td{
   width: auto !important;
   text-overflow: ellipsis;
   overflow: hidden;
+  
 }
 table.table-overflow th{
   width: auto !important;
@@ -462,4 +445,9 @@ table.table-overflow th{
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+table.table-layout-auto{
+  table-layout: auto !important;
+  word-wrap:break-word;
 }

@@ -16,13 +16,20 @@ class Employee
 	public $create_at;
 	public $update_at;
 
+	private $tb_positions = 'tb_positions';
+	public $pos_id;
+	public $pos_name;
+
 	private $conn;
 	public function __construct($db){
         $this->conn = $db;
     }
 
 	public function ListDataEmployees(){
-        $sql = "SELECT * FROM " .$this->tb_employees. " ";
+        $sql = "SELECT * FROM " .$this->tb_employees. " 
+		LEFT JOIN ".$this->tb_positions." 
+		ON ".$this->tb_employees.".pos_id = ".$this->tb_positions.".pos_id ";
+
         if(!empty($_POST["search"]["value"])){
             $sql .= 'WHERE(emp_id LIKE "%'.$_POST["search"]["value"].'%" ';
             $sql .= ' OR name LIKE "%'.$_POST["search"]["value"].'%" ';			
@@ -47,25 +54,36 @@ class Employee
 		$stmtTotal = $this->conn->prepare("SELECT * FROM " .$this->tb_employees);
 		$stmtTotal->execute();
 		$allRecords = $stmtTotal->rowCount();
-
+		
+		$path = "../images/users/";
 		$records = array();
 		foreach($result as $record){
+			
+			$filename = (file_exists($path .$record["photo"])) ? $path .$record["photo"] : $path ."user.png" ;
+			$status = ($record["status"] == "Active") ? "bg-gradient-success" : "bg-gradient-danger";
+
 			$rows = array();
 			$rows[] =	'<div class="d-flex px-2 py-1">
-							<div><img src="../images/users/'.$record['photo'].'" class="avatar avatar-sm me-3"></div>
+							<div><img src="'.$filename.'" class="avatar avatar-sm me-2"></div>
 							<div class="d-flex flex-column justify-content-center">
-								<h6 class="mb-0 text-sm">'.$record['name'].' '.$record['surname'].'</h6>
+								<h6 class="mb-0 text-sm">'.$record["name"].' '.$record["surname"].'</h6>
 								<p class="text-xs text-secondary mb-0">'.$record['email'].'</p>
 							</div>
 						</div>';
-			$rows[] = 	'<p class="text-xs font-weight-bold mb-0">'.$record['phone'].'</p>
-						<p class="text-xs text-secondary mb-0">Ext. ' .$record['phone']." , ".$record['phone'].'</p>';
-			$rows[] =   '<div class="align-middle text-center text-sm">
-                            <span class="badge badge-sm bg-gradient-success">Online</span>
+			$rows[] = 	'<div class="me-5">
+							<p class="text-xs font-weight-bold mb-0">'.$record["pos_name"].'</p>
+							<p class="text-xs text-secondary mb-0">Ext. ' .$record["phone"].'</p>
+						</div>';
+			$rows[] =	'<div class="align-middle text-center text-sm">
+                            <span class="badge badge-sm '.$status.' ">'.$record["status"].'</span>
                         </div>';
 			$rows[] =   '<div class="align-middle text-center">
-                            <a href="javascript:void(0)" title="Edit" name="update" emp_id ="'.$record["emp_id"].'" class="text-center text-primary me-2 update"><i class="fas fa-edit"></i></a>
-                            <a href="javascript:void(0)" title="Delete" name="delete" emp_id ="'.$record["emp_id"].'" user_photo="'.$record["photo"].'" class="ml-3 text-danger delete"><i class="fas fa-trash"></i></a>
+							<span class="text-secondary text-xs font-weight-bold">'.$record["create_at"].'</span>
+						</div>';
+			$rows[] =   '<div class="align-middle text-center">
+                            <a href="javascript:void(0)" title="Edit" name="update" emp_id ="'.$record["emp_id"].'" class="text-center text-primary me-2 update">
+								<i class="fas fa-edit"></i>
+							</a>
                         </div>';
 			$records[] = $rows;
 		}

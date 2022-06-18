@@ -6,19 +6,19 @@ $pageName = 'Products';
 <html lang="en">
 
 <!-- Head -->
-<?php require_once('layouts/head.php'); ?>
+<?php require_once('../layouts/head.php'); ?>
 <!-- End Head -->
 
 <body class="g-sidenav-show  bg-gray-100">
 
     <!-- Sidenav -->
-    <?php require_once('layouts/sidenav.php'); ?>
+    <?php require_once('../layouts/sidenav.php'); ?>
     <!--End Sidenav -->
 
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
 
         <!-- Navbar Main -->
-        <?php require_once('layouts/navbar-main.php'); ?>
+        <?php require_once('../layouts/navbar-main.php'); ?>
         <!-- End Navbar Main -->
 
         <div class="container-fluid py-4">
@@ -54,14 +54,14 @@ $pageName = 'Products';
             </div>
 
             <!-- Footer -->
-            <?php require_once('layouts/footer.php'); ?>
+            <?php require_once('../layouts/footer.php'); ?>
             <!-- End Footer -->
 
         </div>
     </main>
 
     <!-- fixed-plugin -->
-    <?php require_once('layouts/fixed-plugin.php'); ?>
+    <?php require_once('../layouts/fixed-plugin.php'); ?>
     <!-- End Fixed-plugin -->
 
 

@@ -6,19 +6,19 @@ $pageName = 'Emoloyee';
 <html lang="en">
 
 <!-- Head -->
-<?php require_once('layouts/head.php'); ?>
+<?php require_once('../layouts/head.php'); ?>
 <!-- End Head -->
 
 <body class="g-sidenav-show  bg-gray-100">
 
     <!-- Sidenav -->
-    <?php require_once('layouts/sidenav.php'); ?>
+    <?php require_once('../layouts/sidenav.php'); ?>
     <!--End Sidenav -->
 
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
 
         <!-- Navbar Main -->
-        <?php require_once('layouts/navbar-main.php'); ?>
+        <?php require_once('../layouts/navbar-main.php'); ?>
         <!-- End Navbar Main -->
 
         <div class="container-fluid py-4">
@@ -31,20 +31,30 @@ $pageName = 'Emoloyee';
                         </div>
                         <div class="card-body px-0 pt-0 pb-2">
                             <div class="table-responsive p-0">
-                                <table id="ShowDataEmployees" class="table align-items-center mb-0 table-overflow">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-left text-uppercase text-dark text-xxs font-weight-bolder">Author</th>
-                                            <th
-                                                class="text-left text-uppercase text-dark text-xxs font-weight-bolder ps-2">
-                                                Phone Number</th>
-                                            <th
-                                                class="text-center text-uppercase text-dark text-xxs font-weight-bolder">
-                                                Status</th>
-                                            <th
-                                                class="text-center text-uppercase text-dark text-xxs font-weight-bolder">
-                                                Action</th>
-                                        </tr>
+                                <table id="ShowDataEmployees" class="table table-hover table align-items-center mb-0 table-overflow table-layout-auto">
+                                <!-- <colgroup>
+                                    <col width="80%">
+                                    <col width="33%">
+                                    <col width="33%">
+                                    <col width="33%">
+                                    <col width="33%">
+                                </colgroup> -->
+                                <thead>
+                                        <th class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7">
+                                            Author
+                                        </th>
+                                        <th class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Function
+                                        </th>
+                                        <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7">
+                                            Status
+                                        </th>
+                                        <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7">
+                                            Employed
+                                        </th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Action
+                                        </th>
                                     </thead>  
                                 </table>
                             </div>
@@ -54,14 +64,14 @@ $pageName = 'Emoloyee';
             </div>
 
             <!-- Footer -->
-            <?php require_once('layouts/footer.php'); ?>
+            <?php require_once('../layouts/footer.php'); ?>
             <!-- End Footer -->
 
         </div>
     </main>
 
     <!-- fixed-plugin -->
-    <?php require_once('layouts/fixed-plugin.php'); ?>
+    <?php require_once('../layouts/fixed-plugin.php'); ?>
     <!-- End Fixed-plugin -->
 
 

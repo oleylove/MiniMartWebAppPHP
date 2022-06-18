@@ -25,7 +25,7 @@
             `gender` VARCHAR(4) COLLATE utf8_unicode_ci NOT NULL COMMENT 'ตำแหน่งผู้ใช้',
             `status` VARCHAR(8) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'active' COMMENT 'สถานะผู้ใช้',
             `phone` VARCHAR(10) COLLATE utf8_unicode_ci NOT NULL COMMENT 'เบอร์โทรผู้ใช้',
-            `photo` VARCHAR(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'photo.png' COMMENT 'รูปผู้ใช้',
+            `photo` VARCHAR(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'user.png' COMMENT 'รูปผู้ใช้',
             `create_at` datetime DEFAULT NULL COMMENT 'บันทัก',
             `update_at` datetime DEFAULT NULL COMMENT 'แก้ไข'
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci";

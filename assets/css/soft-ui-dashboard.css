@@ -20281,7 +20281,7 @@ fieldset:disabled .btn {
 }
 
 .badge {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .btn {
